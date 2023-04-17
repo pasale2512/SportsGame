@@ -16,15 +16,24 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Start game
-        Button button = findViewById(R.id.button);
-        button.setOnClickListener(v -> {
+        Button buttonPlay = findViewById(R.id.button);
+        buttonPlay.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, PenaltyShootout.class);
             startActivity(intent);
         });
 
+        //Access the store
+        Button buttonStore = findViewById(R.id.button2);
+        buttonStore.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, Store.class);
+            startActivity(intent);
+        });
 
-
-
+        //Access the help menu
+        Button buttonHelp = findViewById(R.id.button3);
+        buttonHelp.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, Help.class);
+            startActivity(intent);
+        });
     }
-
 }
