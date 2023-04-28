@@ -18,27 +18,45 @@ public class Store extends AppCompatActivity {
         imageView0.setImageResource(R.drawable.shopitem);
 
         //Player
-        ImageView imageView1 = findViewById(R.id.imageView4);
-        imageView1.setImageResource(R.drawable.shopitem);
-        ImageView imageView2 = findViewById(R.id.imageView5);
-        imageView2.setImageResource(R.drawable.shopitem);
-        ImageView imageView3 = findViewById(R.id.imageView6);
-        imageView3.setImageResource(R.drawable.shopitem);
+        ImageView imageView10 = findViewById(R.id.imageView4);
+        imageView10.setImageResource(R.drawable.shopitem);
+        ImageView imageView11 = findViewById(R.id.imageView5);
+        imageView11.setImageResource(R.drawable.shopitem);
+        ImageView imageView12 = findViewById(R.id.imageView6);
+        imageView12.setImageResource(R.drawable.shopitem);
+        ImageView imageView13 = findViewById(R.id.imageView14);
+        imageView13.setImageResource(R.drawable.shopitem);
+        ImageView imageView14 = findViewById(R.id.imageView18);
+        imageView14.setImageResource(R.drawable.shopitem);
+        ImageView imageView15 = findViewById(R.id.imageView21);
+        imageView15.setImageResource(R.drawable.shopitem);
 
         //Shoes
-        ImageView imageView4 = findViewById(R.id.imageView9);
-        imageView4.setImageResource(R.drawable.shopitem);
-        ImageView imageView5 = findViewById(R.id.imageView8);
-        imageView5.setImageResource(R.drawable.shopitem);
-        ImageView imageView6 = findViewById(R.id.imageView7);
-        imageView6.setImageResource(R.drawable.shopitem);
+        ImageView imageView20 = findViewById(R.id.imageView9);
+        imageView20.setImageResource(R.drawable.shopitem);
+        ImageView imageView21 = findViewById(R.id.imageView8);
+        imageView21.setImageResource(R.drawable.shopitem);
+        ImageView imageView22 = findViewById(R.id.imageView7);
+        imageView22.setImageResource(R.drawable.shopitem);
+        ImageView imageView23 = findViewById(R.id.imageView15);
+        imageView23.setImageResource(R.drawable.shopitem);
+        ImageView imageView24 = findViewById(R.id.imageView17);
+        imageView24.setImageResource(R.drawable.shopitem);
+        ImageView imageView25 = findViewById(R.id.imageView19);
+        imageView25.setImageResource(R.drawable.shopitem);
 
         //Shirt
-        ImageView imageView7 = findViewById(R.id.imageView12);
-        imageView7.setImageResource(R.drawable.shop_green_shirt);
-        ImageView imageView8 = findViewById(R.id.imageView11);
-        imageView8.setImageResource(R.drawable.shop_blue_shirt);
-        ImageView imageView9 = findViewById(R.id.imageView10);
-        imageView9.setImageResource(R.drawable.shop_red_shirt);
+        ImageView imageView30 = findViewById(R.id.imageView12);
+        imageView30.setImageResource(R.drawable.shop_green_shirt);
+        ImageView imageView31 = findViewById(R.id.imageView11);
+        imageView31.setImageResource(R.drawable.shop_blue_shirt);
+        ImageView imageView32 = findViewById(R.id.imageView10);
+        imageView32.setImageResource(R.drawable.shop_red_shirt);
+        ImageView imageView33 = findViewById(R.id.imageView16);
+        imageView33.setImageResource(R.drawable.shop_red_shirt);
+        ImageView imageView34 = findViewById(R.id.imageView13);
+        imageView34.setImageResource(R.drawable.shop_red_shirt);
+        ImageView imageView35 = findViewById(R.id.imageView20);
+        imageView35.setImageResource(R.drawable.shop_red_shirt);
     }
 }
