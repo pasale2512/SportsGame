@@ -59,16 +59,17 @@ public class PenaltyShootout extends AppCompatActivity {
         final int screenWidth = displayMetrics.widthPixels;
         final int screenHeight = displayMetrics.heightPixels;
 
-// Create a random object
+
         final Random random = new Random();
 
-// Get a reference to the ImageView you want to animate
+        // Get a reference to the ImageView you want to animate
         final ImageView imageView3 = findViewById(R.id.imageView3);
 
-// Create a value animator that will move the ImageView randomly
-        ValueAnimator animator = ValueAnimator.ofFloat(100f);
-        animator.setDuration(3000);
+        // Create a value animator that will move the ImageView randomly
+        ValueAnimator animator = ValueAnimator.ofFloat(0f, 1f);
+        animator.setDuration(8000);
         animator.setRepeatCount(ValueAnimator.INFINITE);
+
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -79,16 +80,14 @@ public class PenaltyShootout extends AppCompatActivity {
                 float offsetX = random.nextInt(screenWidth) - imageView3.getWidth() / 2;
                 float offsetY = random.nextInt(screenHeight) - imageView3.getHeight() / 2;
 
-                // Set the ImageView's translation
+                // Set the ImageViews translation
                 imageView3.setTranslationX(offsetX);
                 imageView3.setTranslationY(offsetY);
 
-                // Set the ImageView's rotation
-                //imageView.setRotation(360 * progress);
             }
         });
 
-// Start the animator
+        // Start the animator
         animator.start();
 
         /*
