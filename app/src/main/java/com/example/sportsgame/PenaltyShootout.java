@@ -31,7 +31,6 @@ public class PenaltyShootout extends AppCompatActivity {
         super.onStart();
         ImageView quadrat = (ImageView) this.findViewById(R.id.imageView3);
         moveQuadrat(quadrat);
-
     }
 
     private View.OnTouchListener touch = new View.OnTouchListener() {
@@ -59,10 +58,7 @@ public class PenaltyShootout extends AppCompatActivity {
         final int screenWidth = displayMetrics.widthPixels;
         final int screenHeight = displayMetrics.heightPixels;
 
-
         final Random random = new Random();
-
-        // Get a reference to the ImageView you want to animate
         final ImageView imageView3 = findViewById(R.id.imageView3);
 
         // Create a value animator that will move the ImageView randomly
@@ -83,19 +79,9 @@ public class PenaltyShootout extends AppCompatActivity {
                 // Set the ImageViews translation
                 imageView3.setTranslationX(offsetX);
                 imageView3.setTranslationY(offsetY);
-
             }
         });
 
-        // Start the animator
         animator.start();
-
-        /*
-        ObjectAnimator animation = ObjectAnimator.ofFloat(view, "translationX", 100f);
-        animation.setDuration(1000);
-        animation.start();
-        animation.
-
-         */
     }
 }
