@@ -1,35 +1,19 @@
 [
     {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_whiteyellowshoe.png.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\whiteyellowshoe.png"
-    },
-    {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\layout_activity_store.xml.flat",
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\layout\\activity_store.xml"
-    },
-    {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_whiteblueshoe.png.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\whiteblueshoe.png"
-    },
-    {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_shop_green_shirt.png.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\shop_green_shirt.png"
     },
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\mipmap-mdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_yellowplayer.png.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\yellowplayer.png"
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_white_shorts.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_white_shorts.png"
     },
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\xml\\data_extraction_rules.xml"
     },
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\mipmap-xhdpi_ic_launcher.webp.flat",
@@ -38,10 +22,6 @@
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_shop_blue_shirt.png.flat",
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\shop_blue_shirt.png"
-    },
-    {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_normalplayer.png.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\normalplayer.png"
     },
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -54,6 +34,134 @@
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_white_player.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_white_player.png"
+    },
+    {
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_grey_shorts.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_grey_shorts.png"
+    },
+    {
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_blue_shirt.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_blue_shirt.png"
+    },
+    {
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_red_shirt.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_red_shirt.png"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_greyshirt.png.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\greyshirt.png"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_greenshirt.png.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\greenshirt.png"
+    },
+    {
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_normal_player.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_normal_player.png"
+    },
+    {
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_yellow_shorts.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_yellow_shorts.png"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_shopitem.png.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\shopitem.png"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_blackplayer.png.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\blackplayer.png"
+    },
+    {
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_tomato_player.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_tomato_player.png"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_whiteredshoe.png.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\whiteredshoe.png"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\layout_activity_help.xml.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\layout\\activity_help.xml"
+    },
+    {
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_blue_shorts.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_blue_shorts.png"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_yellowshirt.png.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\yellowshirt.png"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_blueshirt.png.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\blueshirt.png"
+    },
+    {
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_yellow_shirt.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_yellow_shirt.png"
+    },
+    {
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_grey_shirt.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_grey_shirt.png"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_whiteyellowshoe.png.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\whiteyellowshoe.png"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_whiteblueshoe.png.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\whiteblueshoe.png"
+    },
+    {
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_brown_player.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_brown_player.png"
+    },
+    {
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_white_shirt.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_white_shirt.png"
+    },
+    {
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_green_shorts.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_green_shorts.png"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_shop_green_shirt.png.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\shop_green_shirt.png"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_yellowplayer.png.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\yellowplayer.png"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_red_shorts.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_red_shorts.png"
+    },
+    {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_normalplayer.png.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\normalplayer.png"
     },
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_whiteshirt.png.flat",
@@ -72,20 +180,8 @@
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\tomatoplayer.png"
     },
     {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_greyshirt.png.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\greyshirt.png"
-    },
-    {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_greenshirt.png.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\greenshirt.png"
-    },
-    {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_shopitem.png.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\shopitem.png"
-    },
-    {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_blackplayer.png.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\blackplayer.png"
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_green_shirt.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_green_shirt.png"
     },
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\layout_activity_main.xml.flat",
@@ -108,36 +204,16 @@
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\mipmap-anydpi-v33\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_whiteredshoe.png.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\whiteredshoe.png"
-    },
-    {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\mipmap-xxhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\mipmap-xhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\xml\\backup_rules.xml"
-    },
-    {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable-v24\\ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\mipmap-hdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\layout_activity_help.xml.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\layout\\activity_help.xml"
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_black_player.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_black_player.png"
     },
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_shop_red_shirt.png.flat",
@@ -156,12 +232,8 @@
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_yellowshirt.png.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\yellowshirt.png"
-    },
-    {
-        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_blueshirt.png.flat",
-        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\blueshirt.png"
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_shop_yellow_player.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/shop_yellow_player.png"
     },
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_brownplayer.png.flat",
