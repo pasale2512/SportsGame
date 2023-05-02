@@ -2,36 +2,71 @@ package com.example.sportsgame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.media.Image;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewTreeObserver;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
 import com.google.android.material.snackbar.Snackbar;
 
-import java.util.Random;
-
 public class PenaltyShootout extends AppCompatActivity {
+
+    int bildTop =0;
+    int bildLeft =0;
+    int bildHeight =0;
+    int bildWidth =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_penalty_shootout);
-        ImageView background = (ImageView) this.findViewById(R.id.imageView);
-        background.setOnTouchListener(touch);
+        //ImageView background = (ImageView) this.findViewById(R.id.imageVie´);
+        //background.setOnTouchListener(touch);
+
+        View view = findViewById(R.id.background);
+        ViewTreeObserver observer = view.getViewTreeObserver();
+
+        observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+
+
+                ImageView bildView = findViewById(R.id.bild);
+                Drawable drawable = bildView.getDrawable();
+                Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.goaltest);
+                int width = bitmap.getWidth();
+                int widthInDp = (int) (width / getResources().getDisplayMetrics().density);
+
+                bildTop =bildView.getTop();
+                bildLeft =bildView.getWidth()-((bildView.getWidth())-widthInDp/2);
+                bildHeight =bildView.getHeight();
+                bildWidth=widthInDp;
+
+                ImageView quadrat = (ImageView) view.findViewById(R.id.quadrat);
+                //moveQuadrat(quadrat);
+
+
+                int newX= getRandomNumber(bildLeft, (bildLeft +bildWidth-quadrat.getWidth()));
+                int newY = getRandomNumber(bildTop, (bildTop + bildHeight -quadrat.getHeight()));
+
+                moveImageView(quadrat, newX, newY); // move to X=100, Y=200
+
+                // Unregister the listener to avoid multiple calls
+                view.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+            }
+        });
     }
 
-    @Override
-    protected void onStart() {
-
-        super.onStart();
-        ImageView quadrat = (ImageView) this.findViewById(R.id.imageView3);
-        moveQuadrat(quadrat);
+    public int getRandomNumber(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
     }
+
+
 
     private View.OnTouchListener touch = new View.OnTouchListener() {
         @Override
@@ -50,38 +85,27 @@ public class PenaltyShootout extends AppCompatActivity {
         }
     };
 
-    private void moveQuadrat (View view){
 
-        // Get the screen dimensions
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        final int screenWidth = displayMetrics.widthPixels;
-        final int screenHeight = displayMetrics.heightPixels;
 
-        final Random random = new Random();
-        final ImageView imageView3 = findViewById(R.id.imageView3);
+    public void moveImageView(ImageView quadrat, int newX, int newY) {
+        TranslateAnimation animation = new TranslateAnimation(0, newX - quadrat.getX(), 0, newY - quadrat.getY());
+        animation.setDuration(500); // one second duration
+        animation.setFillAfter(true); // stay in the new position after animation
+        quadrat.startAnimation(animation);
 
-        // Create a value animator that will move the ImageView randomly
-        ValueAnimator animator = ValueAnimator.ofFloat(0f, 1f);
-        animator.setDuration(8000);
-        animator.setRepeatCount(ValueAnimator.INFINITE);
-
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+        // Update ImageView's layout parameters after the animation to reflect the new position
+        quadrat.postDelayed(new Runnable() {
             @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                // Get the current progress of the animation
-                float progress = (float) animation.getAnimatedValue();
+            public void run() {
+                quadrat.clearAnimation();
+                quadrat.setX(newX);
+                quadrat.setY(newY);
 
-                // Calculate a random X and Y offset
-                float offsetX = random.nextInt(screenWidth) - imageView3.getWidth() / 2;
-                float offsetY = random.nextInt(screenHeight) - imageView3.getHeight() / 2;
+                int newX2= getRandomNumber(bildLeft, (bildLeft +bildWidth-quadrat.getWidth()));
+                int newY2 = getRandomNumber(bildTop, (bildTop + bildHeight -quadrat.getHeight()));
 
-                // Set the ImageViews translation
-                imageView3.setTranslationX(offsetX);
-                imageView3.setTranslationY(offsetY);
+                moveImageView(quadrat, newX2, newY2); // move to X=100, Y=200
             }
-        });
-
-        animator.start();
+        }, 500); // 1000ms delay to match the animation duration
     }
 }

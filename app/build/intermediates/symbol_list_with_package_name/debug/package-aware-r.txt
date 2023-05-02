@@ -2715,6 +2715,8 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable goal
+drawable goaltest
 drawable ic_arrow_back_black_24
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
@@ -2909,11 +2911,13 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id background
 id barrier
 id baseline
 id beginOnFirstDraw
 id beginning
 id bestChoice
+id bild
 id blocking
 id bottom
 id bounce
@@ -3042,7 +3046,6 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageView
 id imageView00
 id imageView10
 id imageView11
@@ -3056,7 +3059,6 @@ id imageView22
 id imageView23
 id imageView24
 id imageView25
-id imageView3
 id imageView30
 id imageView31
 id imageView32
@@ -3184,6 +3186,7 @@ id postLayout
 id pressed
 id progress_circular
 id progress_horizontal
+id quadrat
 id radio
 id ratio
 id rectangles

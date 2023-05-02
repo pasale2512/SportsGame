@@ -7,6 +7,8 @@ color purple_700
 color teal_200
 color teal_700
 color white
+drawable goal
+drawable goaltest
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable shop_black_player
@@ -28,10 +30,11 @@ drawable shop_yellow_player
 drawable shop_yellow_shirt
 drawable shop_yellow_shorts
 drawable shopitem
+id background
+id bild
 id button
 id button2
 id button3
-id imageView
 id imageView00
 id imageView10
 id imageView11
@@ -45,13 +48,13 @@ id imageView22
 id imageView23
 id imageView24
 id imageView25
-id imageView3
 id imageView30
 id imageView31
 id imageView32
 id imageView33
 id imageView34
 id imageView35
+id quadrat
 id textView
 id textView2
 id textView3
