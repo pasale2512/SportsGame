@@ -1,9 +1,10 @@
 package com.example.sportsgame;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 
 public class Store extends AppCompatActivity {
 
@@ -61,7 +62,26 @@ public class Store extends AppCompatActivity {
         ImageView imageView35 = findViewById(R.id.imageView35);
         imageView35.setImageResource(R.drawable.shop_red_shorts);
 
+        // Erstelle ScrollView
+        ScrollView scrollView = new ScrollView(this);
+        scrollView.setLayoutParams(new ScrollView.LayoutParams(ScrollView.LayoutParams.MATCH_PARENT, ScrollView.LayoutParams.MATCH_PARENT));
 
+        // Erstelle GridLayout
+        GridLayout gridLayout = new GridLayout(this);
+        gridLayout.setColumnCount(6);
+        gridLayout.setRowCount(6);
 
+        // Füge ImageViews hinzu
+        for (int i = 1; i <= 36; i++) {
+            ImageView imageView = new ImageView(this);
+            imageView.setImageResource(getResources().getIdentifier("image" + i, "drawable", getPackageName()));
+            gridLayout.addView(imageView);
+        }
+
+        // Füge GridLayout zu ScrollView hinzu
+        scrollView.addView(gridLayout);
+
+        // Setze ContentView auf ScrollView
+        setContentView(scrollView);
     }
 }
