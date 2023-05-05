@@ -2716,6 +2716,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable goal
+drawable goal169
 drawable goaltest
 drawable ic_arrow_back_black_24
 drawable ic_clear_black_24
@@ -2821,6 +2822,7 @@ drawable shop_yellow_player
 drawable shop_yellow_shirt
 drawable shop_yellow_shorts
 drawable shopitem
+drawable shopitem_keeper
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -2912,6 +2914,7 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id background
+id ball
 id barrier
 id baseline
 id beginOnFirstDraw

@@ -8,6 +8,7 @@ color teal_200
 color teal_700
 color white
 drawable goal
+drawable goal169
 drawable goaltest
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -30,7 +31,9 @@ drawable shop_yellow_player
 drawable shop_yellow_shirt
 drawable shop_yellow_shorts
 drawable shopitem
+drawable shopitem_keeper
 id background
+id ball
 id bild
 id button
 id button2

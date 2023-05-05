@@ -14,26 +14,30 @@
         android:background="@android:drawable/screen_background_light"
         android:scaleType="centerInside">
 
-
-
         <ImageView
             android:id="@+id/bild"
             android:layout_weight="1"
             android:layout_height="match_parent"
-            app:srcCompat="@drawable/goaltest"
+            app:srcCompat="@drawable/goal169"
             android:scaleType="centerInside"
             android:layout_width="match_parent"
+            />
 
+        <ImageView
+            android:id="@+id/ball"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/shop_white_player"
+            android:layout_marginLeft="340dp"
+            android:layout_marginTop="330dp"
             />
 
         <ImageView
             android:id="@+id/quadrat"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            app:srcCompat="@android:drawable/screen_background_dark"
-            tools:layout_editor_absoluteX="88dp"
-            tools:layout_editor_absoluteY="124dp"
-            />
+            app:srcCompat="@drawable/shopitem_keeper" />
+
 
     </FrameLayout>
 

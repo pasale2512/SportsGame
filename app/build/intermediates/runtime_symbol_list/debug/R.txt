@@ -2715,6 +2715,7 @@ int drawable design_ic_visibility_off 0x7f070084
 int drawable design_password_eye 0x7f070085
 int drawable design_snackbar_background 0x7f070086
 int drawable goal 0x7f070087
+int drawable goal169 0x7f0700f4
 int drawable goaltest 0x7f070088
 int drawable ic_arrow_back_black_24 0x7f070089
 int drawable ic_clear_black_24 0x7f07008a
@@ -2820,6 +2821,7 @@ int drawable shop_yellow_player 0x7f0700ed
 int drawable shop_yellow_shirt 0x7f0700ee
 int drawable shop_yellow_shorts 0x7f0700ef
 int drawable shopitem 0x7f0700f0
+int drawable shopitem_keeper 0x7f0700f5
 int drawable test_level_drawable 0x7f0700f1
 int drawable tooltip_frame_dark 0x7f0700f2
 int drawable tooltip_frame_light 0x7f0700f3
@@ -2911,6 +2913,7 @@ int id autoComplete 0x7f080054
 int id autoCompleteToEnd 0x7f080055
 int id autoCompleteToStart 0x7f080056
 int id background 0x7f080057
+int id ball 0x7f080208
 int id barrier 0x7f080058
 int id baseline 0x7f080059
 int id beginOnFirstDraw 0x7f08005a

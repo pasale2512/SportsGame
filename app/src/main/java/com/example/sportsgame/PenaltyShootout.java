@@ -25,7 +25,7 @@ public class PenaltyShootout extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_penalty_shootout);
-        //ImageView background = (ImageView) this.findViewById(R.id.imageVie´);
+        //ImageView background = (ImageView) this.findViewById(R.id.imageView);
         //background.setOnTouchListener(touch);
 
         View view = findViewById(R.id.background);
@@ -35,8 +35,8 @@ public class PenaltyShootout extends AppCompatActivity {
             @Override
             public void onGlobalLayout() {
 
-
                 ImageView bildView = findViewById(R.id.bild);
+                bildView.setOnTouchListener(touch);
                 Drawable drawable = bildView.getDrawable();
                 Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.goaltest);
                 int width = bitmap.getWidth();
@@ -50,11 +50,16 @@ public class PenaltyShootout extends AppCompatActivity {
                 ImageView quadrat = (ImageView) view.findViewById(R.id.quadrat);
                 //moveQuadrat(quadrat);
 
-
                 int newX= getRandomNumber(bildLeft, (bildLeft +bildWidth-quadrat.getWidth()));
                 int newY = getRandomNumber(bildTop, (bildTop + bildHeight -quadrat.getHeight()));
+                moveImageView(quadrat, newX, newY);
 
-                moveImageView(quadrat, newX, newY); // move to X=100, Y=200
+
+                ImageView ball = (ImageView) view.findViewById(R.id.ball);
+
+                int ballPosX=0;
+                int ballPosY=0;
+                moveBall(ball, ballPosX, ballPosY);
 
                 // Unregister the listener to avoid multiple calls
                 view.getViewTreeObserver().removeOnGlobalLayoutListener(this);
@@ -76,6 +81,7 @@ public class PenaltyShootout extends AppCompatActivity {
             int y = (int) event.getY();
 
             switch(event.getAction()) {
+
                 case MotionEvent.ACTION_UP:
                     Snackbar.make(view, x + " " + y, Snackbar.LENGTH_SHORT).show();
                     break;
@@ -85,9 +91,11 @@ public class PenaltyShootout extends AppCompatActivity {
     };
 
 
+
+
     public void moveImageView(ImageView quadrat, int newX, int newY) {
         TranslateAnimation animation = new TranslateAnimation(0, newX - quadrat.getX(), 0, newY - quadrat.getY());
-        animation.setDuration(500);
+        animation.setDuration(2000);
         //Nach der Bewegung in der neuen position bleiben
         animation.setFillAfter(true);
         quadrat.startAnimation(animation);
@@ -106,14 +114,29 @@ public class PenaltyShootout extends AppCompatActivity {
                 moveImageView(quadrat, newX2, newY2); // move to X=100, Y=200
             }
             //delay für die Dauer der Animation
-        }, 500);
+        }, 2000);
     }
 
 
     public void moveBall(ImageView ball, int newX, int newY){
 
         TranslateAnimation ballAnimation = new TranslateAnimation(0, newX-ball.getX(), 0, newY-ball.getY());
+        //Duration je nach Schusskraft stärker oder schwächer
         ballAnimation.setDuration(500);
-        
+        ballAnimation.setFillAfter(true);
+        ball.setAnimation(ballAnimation);
+
+        ball.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                ball.clearAnimation();
+                ball.setX(newX);
+                ball.setY(newY);
+
+                int newX2= getRandomNumber(bildLeft, (bildLeft +bildWidth-ball.getWidth()));
+                int newY2 = getRandomNumber(bildTop, (bildTop + bildHeight -ball.getHeight()));
+            }
+            //delay für die Dauer der Animation
+        }, 500);
     }
 }
