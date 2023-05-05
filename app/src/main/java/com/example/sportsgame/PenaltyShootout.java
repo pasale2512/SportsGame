@@ -78,7 +78,6 @@ public class PenaltyShootout extends AppCompatActivity {
             switch(event.getAction()) {
                 case MotionEvent.ACTION_UP:
                     Snackbar.make(view, x + " " + y, Snackbar.LENGTH_SHORT).show();
-
                     break;
             }
             return true;
@@ -86,14 +85,14 @@ public class PenaltyShootout extends AppCompatActivity {
     };
 
 
-
     public void moveImageView(ImageView quadrat, int newX, int newY) {
         TranslateAnimation animation = new TranslateAnimation(0, newX - quadrat.getX(), 0, newY - quadrat.getY());
-        animation.setDuration(500); // one second duration
-        animation.setFillAfter(true); // stay in the new position after animation
+        animation.setDuration(500);
+        //Nach der Bewegung in der neuen position bleiben
+        animation.setFillAfter(true);
         quadrat.startAnimation(animation);
 
-        // Update ImageView's layout parameters after the animation to reflect the new position
+        //Updaten der ImageView Daten nach der Animation
         quadrat.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -106,6 +105,15 @@ public class PenaltyShootout extends AppCompatActivity {
 
                 moveImageView(quadrat, newX2, newY2); // move to X=100, Y=200
             }
-        }, 500); // 1000ms delay to match the animation duration
+            //delay für die Dauer der Animation
+        }, 500);
+    }
+
+
+    public void moveBall(ImageView ball, int newX, int newY){
+
+        TranslateAnimation ballAnimation = new TranslateAnimation(0, newX-ball.getX(), 0, newY-ball.getY());
+        ballAnimation.setDuration(500);
+        
     }
 }
