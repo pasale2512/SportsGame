@@ -15,6 +15,13 @@
         android:scaleType="centerInside">
 
         <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/stadium" />
+
+
+        <ImageView
             android:id="@+id/bild"
             android:layout_weight="1"
             android:layout_height="match_parent"
@@ -37,6 +44,8 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:srcCompat="@drawable/shopitem_keeper" />
+
+
 
 
     </FrameLayout>
