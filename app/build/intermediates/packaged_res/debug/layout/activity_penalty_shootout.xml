@@ -11,8 +11,9 @@
         android:id="@+id/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:drawable/screen_background_light"
+        android:background="@drawable/stadium"
         android:scaleType="centerInside">
+
 
         <ImageView
             android:id="@+id/bild"
@@ -24,6 +25,13 @@
             />
 
         <ImageView
+            android:id="@+id/quadrat"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/shopitem_keeper" />
+
+
+        <ImageView
             android:id="@+id/ball"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -32,11 +40,6 @@
             android:layout_marginTop="330dp"
             />
 
-        <ImageView
-            android:id="@+id/quadrat"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            app:srcCompat="@drawable/shopitem_keeper" />
 
 
     </FrameLayout>

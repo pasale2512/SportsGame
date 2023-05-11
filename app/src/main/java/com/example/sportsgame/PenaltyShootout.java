@@ -4,22 +4,31 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.Matrix;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.view.animation.Transformation;
 import android.view.animation.TranslateAnimation;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.google.android.material.snackbar.Snackbar;
 
 public class PenaltyShootout extends AppCompatActivity {
 
-    int bildTop =0;
-    int bildLeft =0;
-    int bildHeight =0;
-    int bildWidth =0;
+
+    private long lastAnimationStarted;
+    private int newGoalieX, newGoalieY;
+
+    private int goalieDuration = 2000;
+    private int ballDuration = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,41 +37,41 @@ public class PenaltyShootout extends AppCompatActivity {
         //ImageView background = (ImageView) this.findViewById(R.id.imageView);
         //background.setOnTouchListener(touch);
 
-        View view = findViewById(R.id.background);
-        ViewTreeObserver observer = view.getViewTreeObserver();
+        View background = findViewById(R.id.background);
+        ViewTreeObserver observer = background.getViewTreeObserver();
 
         observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
 
-                ImageView bildView = findViewById(R.id.bild);
-                bildView.setOnTouchListener(touch);
-                Drawable drawable = bildView.getDrawable();
+                ImageView goal = findViewById(R.id.bild);
+                goal.setOnTouchListener(touch);
+                Drawable drawable = goal.getDrawable();
                 Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.goaltest);
                 int width = bitmap.getWidth();
                 int widthInDp = (int) (width / getResources().getDisplayMetrics().density);
 
-                bildTop =bildView.getTop();
-                bildLeft =bildView.getWidth()-((bildView.getWidth())-widthInDp/2);
-                bildHeight =bildView.getHeight();
-                bildWidth=widthInDp;
 
-                ImageView quadrat = (ImageView) view.findViewById(R.id.quadrat);
+                ImageView goalie = (ImageView) background.findViewById(R.id.quadrat);
                 //moveQuadrat(quadrat);
 
-                int newX= getRandomNumber(bildLeft, (bildLeft +bildWidth-quadrat.getWidth()));
-                int newY = getRandomNumber(bildTop, (bildTop + bildHeight -quadrat.getHeight()));
-                moveImageView(quadrat, newX, newY);
+                int newX = getRandomNumber(0, (background.getWidth() - goalie.getWidth()));
+                int newY = getRandomNumber(0, (background.getHeight() - goalie.getHeight()));
+                moveGoalie(goalie, newX, newY);
+
+                moveBall(background, 0, 0, 0);
 
 
-                ImageView ball = (ImageView) view.findViewById(R.id.ball);
 
+                /*
                 int ballPosX=0;
                 int ballPosY=0;
                 moveBall(ball, ballPosX, ballPosY);
 
+                 */
+
                 // Unregister the listener to avoid multiple calls
-                view.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                background.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
     }
@@ -72,18 +81,20 @@ public class PenaltyShootout extends AppCompatActivity {
     }
 
 
-
     private View.OnTouchListener touch = new View.OnTouchListener() {
         @Override
-        public boolean onTouch(View view, MotionEvent event) {
+        public boolean onTouch(View background, MotionEvent event) {
 
             int x = (int) event.getX();
             int y = (int) event.getY();
 
-            switch(event.getAction()) {
+            switch (event.getAction()) {
 
                 case MotionEvent.ACTION_UP:
-                    Snackbar.make(view, x + " " + y, Snackbar.LENGTH_SHORT).show();
+                    //Snackbar.make(view, ((View)view.getParent()).findViewById(R.id.ball), Snackbar.LENGTH_SHORT);
+
+                    moveBall(background, x, y, 1000);
+                    //Snackbar.make(view, x + " " + y, Snackbar.LENGTH_SHORT).show();
                     break;
             }
             return true;
@@ -91,38 +102,41 @@ public class PenaltyShootout extends AppCompatActivity {
     };
 
 
-
-
-    public void moveImageView(ImageView quadrat, int newX, int newY) {
-        TranslateAnimation animation = new TranslateAnimation(0, newX - quadrat.getX(), 0, newY - quadrat.getY());
-        animation.setDuration(2000);
+    public void moveGoalie(ImageView goalie, int newX, int newY) {
+        TranslateAnimation goalieAnimation = new TranslateAnimation(0, newX - goalie.getX(), 0, newY - goalie.getY());
+        goalieAnimation.setDuration(goalieDuration);
         //Nach der Bewegung in der neuen position bleiben
-        animation.setFillAfter(true);
-        quadrat.startAnimation(animation);
+        goalieAnimation.setFillAfter(true);
+        lastAnimationStarted = System.currentTimeMillis();
+        goalie.startAnimation(goalieAnimation);
 
         //Updaten der ImageView Daten nach der Animation
-        quadrat.postDelayed(new Runnable() {
+        goalie.postDelayed(new Runnable() {
             @Override
             public void run() {
-                quadrat.clearAnimation();
-                quadrat.setX(newX);
-                quadrat.setY(newY);
+                goalie.clearAnimation();
+                goalie.setX(newX);
+                goalie.setY(newY);
 
-                int newX2= getRandomNumber(bildLeft, (bildLeft +bildWidth-quadrat.getWidth()));
-                int newY2 = getRandomNumber(bildTop, (bildTop + bildHeight -quadrat.getHeight()));
+                newGoalieX = getRandomNumber(0, (((View) goalie.getParent()).getWidth() - goalie.getWidth()));
+                newGoalieY = getRandomNumber(0, (((View) goalie.getParent()).getHeight() - goalie.getHeight()));
 
-                moveImageView(quadrat, newX2, newY2); // move to X=100, Y=200
+                moveGoalie(goalie, newGoalieX, newGoalieY); // move to X=100, Y=200
             }
             //delay für die Dauer der Animation
-        }, 2000);
+        }, goalieDuration);
     }
 
 
-    public void moveBall(ImageView ball, int newX, int newY){
+    public void moveBall(View background, int newX, int newY, int duration) {
 
-        TranslateAnimation ballAnimation = new TranslateAnimation(0, newX-ball.getX(), 0, newY-ball.getY());
+        ImageView ball = ((View) background.getParent()).findViewById(R.id.ball);
+        float ballcenterX = ball.getX() + (ball.getWidth() / 2);
+        float ballcenterY = ball.getY() + (ball.getHeight() / 2);
+
+        TranslateAnimation ballAnimation = new TranslateAnimation(0, newX - ballcenterX, 0, newY - ballcenterY);
         //Duration je nach Schusskraft stärker oder schwächer
-        ballAnimation.setDuration(500);
+        ballAnimation.setDuration(duration);
         ballAnimation.setFillAfter(true);
         ball.setAnimation(ballAnimation);
 
@@ -130,13 +144,60 @@ public class PenaltyShootout extends AppCompatActivity {
             @Override
             public void run() {
                 ball.clearAnimation();
-                ball.setX(newX);
-                ball.setY(newY);
+                ImageView goalie = ((View) background.getParent()).findViewById(R.id.quadrat);
 
-                int newX2= getRandomNumber(bildLeft, (bildLeft +bildWidth-ball.getWidth()));
-                int newY2 = getRandomNumber(bildTop, (bildTop + bildHeight -ball.getHeight()));
+                long currentTime = System.currentTimeMillis();
+
+                long timeSinceStart = currentTime - lastAnimationStarted;
+                double animationProgress = (1.0 / goalieDuration) * timeSinceStart;
+                double currentX = goalie.getX() + (((newGoalieX - goalie.getX()) * animationProgress));
+                double currentY = goalie.getY() + (((newGoalieY - goalie.getY()) * animationProgress));
+
+
+                Rect goalieRect = new Rect((int) Math.round(currentX), (int) Math.round(currentY), (int) Math.round(currentX + goalie.getWidth()), (int) Math.round(currentY + goalie.getHeight()));
+                Rect ballRect = new Rect((int) Math.round(newX - (ball.getWidth() / 2)), (int) Math.round(newY - (ball.getHeight() / 2)), (int) Math.round(newX + ball.getWidth() / 2), (int) Math.round(newY + ball.getHeight() / 2));
+
+
+                if (duration != 0) {
+                    if (Rect.intersects(ballRect, goalieRect)) {
+                        Snackbar.make(background, "No goal!", Snackbar.LENGTH_SHORT).show();
+                    } else if(ballInGoal(ballRect)){
+                        Snackbar.make(background, "Goal!", Snackbar.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Snackbar.make(background, "Missed!", Snackbar.LENGTH_SHORT).show();
+                    }
+                }
+                ball.setX((background.getWidth() / 2) - ball.getWidth() / 2);
+                ball.setY(background.getHeight() - ball.getHeight());
+
+                int newX2 = getRandomNumber(0, (background.getWidth() - ball.getWidth()));
+                int newY2 = getRandomNumber(0, (background.getHeight() - ball.getHeight()));
+
+                Log.d("myApp", goalieRect.toString() + ballRect.toString());
+                Log.d("myApp", "Click: " + newX + " " + newY);
+
+
             }
             //delay für die Dauer der Animation
-        }, 500);
+        }, duration);
+    }
+
+    private boolean ballInGoal(Rect ball) {
+
+        View background = findViewById(R.id.background);
+        int backgroundWidth = background.getWidth();
+        int backgroundHeigth = background.getHeight();
+        int goalWidth = (backgroundHeigth*2);
+        int goalX = (backgroundWidth-goalWidth)/2;
+        final float WIDTH_POST_PERCENTAGE = (float) 0.0231;
+        final float HEIGTH_POST_PERCENTAGE = (float) 0.0476;
+
+        if(ball.left > goalX +(goalWidth*WIDTH_POST_PERCENTAGE) && ball.right < (goalX+goalWidth)-(goalWidth*WIDTH_POST_PERCENTAGE)){
+
+            return true;
+        }
+
+        return false;
     }
 }

@@ -116,6 +116,10 @@
         "source": "/Users/alexpastore/.gradle/daemon/7.5/com.example.sportsgame.app-main-31:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "/Users/alexpastore/.gradle/daemon/7.5/com.example.sportsgame.app-merged_res-29:/drawable_stadium.png.flat",
+        "source": "/Users/alexpastore/.gradle/daemon/7.5/com.example.sportsgame.app-main-31:/drawable/stadium.png"
+    },
+    {
         "merged": "/Users/alexpastore/.gradle/daemon/7.5/com.example.sportsgame.app-merged_res-29:/drawable_shop_red_shirt.png.flat",
         "source": "/Users/alexpastore/.gradle/daemon/7.5/com.example.sportsgame.app-main-31:/drawable/shop_red_shirt.png"
     },

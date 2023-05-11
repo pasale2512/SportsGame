@@ -32,6 +32,7 @@ drawable shop_yellow_shirt
 drawable shop_yellow_shorts
 drawable shopitem
 drawable shopitem_keeper
+drawable stadium
 id background
 id ball
 id bild

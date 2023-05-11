@@ -2823,6 +2823,7 @@ drawable shop_yellow_shirt
 drawable shop_yellow_shorts
 drawable shopitem
 drawable shopitem_keeper
+drawable stadium
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
