@@ -6,6 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".Store">
 
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Store">
+
+        <ScrollView
+            android:id="@+id/mainScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <GridLayout
+                android:id="@+id/mainGridLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="6"
+                android:rowCount="7">
+
+                <!-- Hier werden die ImageViews hinzugefügt -->
+
+            </GridLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/purchasedImagesLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:id="@+id/purchasedImagesScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <GridLayout
+                    android:id="@+id/purchasedImagesGridLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:columnCount="1"
+                    android:rowCount="41">
+
+                    <!-- Hier werden die gekauften ImageViews hinzugefügt -->
+
+                </GridLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/imageView20"
         android:layout_width="70dp"
@@ -17,6 +70,36 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView21"
         app:layout_constraintTop_toBottomOf="@+id/imageView10"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".Store">
+
+        <ScrollView
+            android:id="@+id/mainScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <GridLayout
+                android:id="@+id/mainGridLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnCount="6"
+                android:rowCount="7">
+
+                <!-- Hier werden die ImageViews hinzugefügt -->
+
+            </GridLayout>
+
+        </ScrollView>
+
+        <!-- Hier kannst du den LinearLayout für die zweite ScrollView und GridLayout hinzufügen -->
+
+    </LinearLayout>
+
 
     <ImageView
         android:id="@+id/imageView10"
