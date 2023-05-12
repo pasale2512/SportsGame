@@ -18,8 +18,16 @@ import android.view.animation.Transformation;
 import android.view.animation.TranslateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class PenaltyShootout extends AppCompatActivity {
 
@@ -30,12 +38,15 @@ public class PenaltyShootout extends AppCompatActivity {
     private int goalieDuration = 2000;
     private int ballDuration = 1000;
 
+    private TextView coinsTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_penalty_shootout);
-        //ImageView background = (ImageView) this.findViewById(R.id.imageView);
-        //background.setOnTouchListener(touch);
+
+        coinsTextView = findViewById(R.id.coinsTextView);
+        updateCoinsDisplay();
 
         View background = findViewById(R.id.background);
         ViewTreeObserver observer = background.getViewTreeObserver();
@@ -163,6 +174,11 @@ public class PenaltyShootout extends AppCompatActivity {
                         Snackbar.make(background, "No goal!", Snackbar.LENGTH_SHORT).show();
                     } else if(ballInGoal(ballRect)){
                         Snackbar.make(background, "Goal!", Snackbar.LENGTH_SHORT).show();
+                        // Aufruf der Methode, um einen Coin hinzuzufügen
+                        addCoinToTextFile();
+
+                        // Aufruf der Methode, um die Anzeige zu aktualisieren
+                        updateCoinsDisplay();
                     }
                     else{
                         Snackbar.make(background, "Missed!", Snackbar.LENGTH_SHORT).show();
@@ -199,5 +215,46 @@ public class PenaltyShootout extends AppCompatActivity {
         }
 
         return false;
+    }
+    private void updateCoinsDisplay() {
+        int coinsCount = readCoinsFromTextFile();
+        coinsTextView.setText("Coins: " + coinsCount);
+    }
+
+    private int readCoinsFromTextFile() {
+        try {
+            File file = new File(getFilesDir(), "coins.txt");
+            if (!file.exists()) {
+                file.createNewFile();
+                return 0;
+            }
+
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+            String line;
+            int coinsCount = 0;
+            while ((line = bufferedReader.readLine()) != null) {
+                if (line.equals("Coin")) {
+                    coinsCount++;
+                }
+            }
+            bufferedReader.close();
+            return coinsCount;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    private void addCoinToTextFile() {
+        try {
+            File file = new File(getFilesDir(), "coins.txt");
+            FileWriter fileWriter = new FileWriter(file, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            bufferedWriter.write("Coin"); // Füge "Coin" zur Textdatei hinzu
+            bufferedWriter.newLine();
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

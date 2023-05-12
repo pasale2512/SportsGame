@@ -148,6 +148,10 @@
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\image40.png"
     },
     {
+        "merged": "com.example.sportsgame.app-merged_res-29:/layout_activity_penalty_shootout.xml.flat",
+        "source": "com.example.sportsgame.app-main-31:/layout/activity_penalty_shootout.xml"
+    },
+    {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_image28.png.flat",
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\image28.png"
     },
@@ -266,10 +270,6 @@
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\layout_activity_penalty_shootout.xml.flat",
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\layout\\activity_penalty_shootout.xml"
-    },
-    {
-        "merged": "com.example.sportsgame.app-merged_res-29:/layout_activity_store.xml.flat",
-        "source": "com.example.sportsgame.app-main-31:/layout/activity_store.xml"
     },
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_image27.png.flat",

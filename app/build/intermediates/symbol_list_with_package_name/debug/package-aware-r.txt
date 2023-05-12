@@ -2979,6 +2979,8 @@ id clip_horizontal
 id clip_vertical
 id clockwise
 id closest
+id coins
+id coinsTextView
 id collapseActionView
 id compress
 id confirm_button
@@ -3329,7 +3331,6 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
-id textView2
 id textView3
 id text_input_end_icon
 id text_input_error_icon

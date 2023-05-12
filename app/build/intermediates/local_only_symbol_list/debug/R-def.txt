@@ -65,6 +65,8 @@ id bild
 id button
 id button2
 id button3
+id coins
+id coinsTextView
 id imageView00
 id imageView10
 id imageView11
@@ -91,7 +93,6 @@ id purchasedImagesLinearLayout
 id purchasedImagesScrollView
 id quadrat
 id textView
-id textView2
 id textView3
 layout activity_help
 layout activity_main
