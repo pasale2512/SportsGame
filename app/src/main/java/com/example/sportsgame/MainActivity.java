@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import java.io.BufferedReader;
@@ -39,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        //Access the help menu
+        //Settings
         Button buttonHelp = findViewById(R.id.button3);
         buttonHelp.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, Help.class);
+            Intent intent = new Intent(MainActivity.this, Settings.class);
             startActivity(intent);
         });
     }

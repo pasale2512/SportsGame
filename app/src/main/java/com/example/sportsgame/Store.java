@@ -74,29 +74,33 @@ public class Store extends AppCompatActivity {
                     ImageView clickedImageView = (ImageView) v;
 
                     if (purchasedImages1.contains(imageId)) {
-                        Toast.makeText(Store.this, "Bild bereits gekauft", Toast.LENGTH_SHORT).show();
+                        if (clickedImageView.isSelected()) {
+                            clickedImageView.setImageResource(R.drawable.gekauft);
+                            clickedImageView.setSelected(false);
+                        } else {
+                            clickedImageView.setImageResource(R.drawable.selected);
+                            clickedImageView.setSelected(true);
+                        }
                     } else {
                         int imageCoin = imageCoins.get(imageId - 1);
                         if (imageCoin <= coinsCount) {
                             clickedImageView.setImageResource(R.drawable.gekauft);
-                            clickedImageView.setClickable(false);
-
-                            purchasedImages1.add(imageId); // Bild zur Liste der gekauften Bilder hinzufügen
-                            savePurchasedImages(purchasedImages1); // Spielstand speichern
-
-                            coinsCount -= imageCoin; // Abziehen des Münzwerts vom Gesamtguth
-                            saveCoinsToTextFile(coinsCount); // Münzenanzahl speichern
-                            updateCoinsDisplay(); // Münzenanzeige aktualisieren
+                            clickedImageView.setClickable(false); // Das Bild ist nicht mehr kaufbar
+                            purchasedImages1.add(imageId);
+                            coinsCount -= imageCoin;
+                            savePurchasedImages(purchasedImages1);
+                            saveCoinsToTextFile(coinsCount);
+                            updateCoinsDisplay();
                         } else {
-                            Toast.makeText(Store.this, "Nicht genug Münzen", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Store.this, "Nicht genügend Münzen", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
             });
-
             if (purchasedImages1.contains(i)) { // Prüfe, ob das Bild bereits gekauft wurde
                 imageView.setImageResource(R.drawable.gekauft);
-                imageView.setClickable(false);
+                imageView.setSelected(false);
+                imageView.setClickable(true);
             }
 
             // Erstelle TextView für den Text
@@ -209,3 +213,4 @@ public class Store extends AppCompatActivity {
         }
     }
 }
+

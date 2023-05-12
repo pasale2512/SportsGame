@@ -244,12 +244,20 @@
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\image11.png"
     },
     {
+        "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\layout\\activity_settings.xml"
+    },
+    {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_image30.png.flat",
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\image30.png"
     },
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.sportsgame.app-merged_res-29:/drawable_selected.png.flat",
+        "source": "com.example.sportsgame.app-main-31:/drawable/selected.png"
     },
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_goal.png.flat",
@@ -274,10 +282,6 @@
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_image7.png.flat",
         "source": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-main-31:\\drawable\\image7.png"
-    },
-    {
-        "merged": "com.example.sportsgame.app-merged_res-29:/layout_activity_store.xml.flat",
-        "source": "com.example.sportsgame.app-main-31:/layout/activity_store.xml"
     },
     {
         "merged": "C:\\Users\\simon\\.gradle\\daemon\\7.5\\com.example.sportsgame.app-merged_res-29:\\drawable_image27.png.flat",

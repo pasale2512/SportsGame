@@ -31,7 +31,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.SportsGame" >
         <activity
-            android:name="com.example.sportsgame.Help"
+            android:name="com.example.sportsgame.Settings"
             android:exported="false"
             android:parentActivityName="com.example.sportsgame.MainActivity"
             android:screenOrientation="landscape" />

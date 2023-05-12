@@ -2846,6 +2846,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable selected
 drawable shop_white_player
 drawable shopitem
 drawable shopitem_keeper
@@ -2924,6 +2925,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addCoinsButton
 id alertTitle
 id aligned
 id all
@@ -3004,6 +3006,8 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id deleteCoinsButton
+id deletePurchasedImagesButton
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -3308,7 +3312,10 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView2
 id textView3
+id textView4
+id textView5
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3463,9 +3470,9 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_help
 layout activity_main
 layout activity_penalty_shootout
+layout activity_settings
 layout activity_store
 layout custom_dialog
 layout design_bottom_navigation_item
