@@ -35,7 +35,7 @@
             android:id="@+id/ball"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/shop_white_player"
+            app:srcCompat="@drawable/whiteball"
             android:layout_marginLeft="340dp"
             android:layout_marginTop="330dp"
             />

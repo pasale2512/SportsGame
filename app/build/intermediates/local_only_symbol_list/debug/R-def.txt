@@ -60,6 +60,7 @@ drawable shop_white_player
 drawable shopitem
 drawable shopitem_keeper
 drawable stadium
+drawable whiteball
 id addCoinsButton
 id background
 id ball
@@ -85,7 +86,6 @@ layout activity_store
 mipmap ball
 mipmap ic_launcher
 mipmap ic_launcher_round
-raw mysound
 string app_name
 style Theme.SportsGame
 xml backup_rules

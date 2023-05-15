@@ -2854,6 +2854,7 @@ drawable stadium
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable whiteball
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -3555,7 +3556,6 @@ mipmap ball
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
-raw mysound
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
