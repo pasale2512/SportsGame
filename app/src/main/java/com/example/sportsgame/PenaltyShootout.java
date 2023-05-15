@@ -63,7 +63,6 @@ public class PenaltyShootout extends AppCompatActivity {
 
 
                 ImageView goalie = (ImageView) background.findViewById(R.id.quadrat);
-                //moveQuadrat(quadrat);
 
                 int newX = getRandomNumber(0, (background.getWidth() - goalie.getWidth()));
                 int newY = getRandomNumber(0, (background.getHeight() - goalie.getHeight()));
@@ -71,16 +70,6 @@ public class PenaltyShootout extends AppCompatActivity {
 
                 moveBall(background, 0, 0, 0);
 
-
-
-                /*
-                int ballPosX=0;
-                int ballPosY=0;
-                moveBall(ball, ballPosX, ballPosY);
-
-                 */
-
-                // Unregister the listener to avoid multiple calls
                 background.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
@@ -95,16 +84,15 @@ public class PenaltyShootout extends AppCompatActivity {
         @Override
         public boolean onTouch(View background, MotionEvent event) {
 
+            //Erkennung der Klick Position (Wo der Ball hinfliegen soll)
             int x = (int) event.getX();
             int y = (int) event.getY();
 
             switch (event.getAction()) {
 
                 case MotionEvent.ACTION_UP:
-                    //Snackbar.make(view, ((View)view.getParent()).findViewById(R.id.ball), Snackbar.LENGTH_SHORT);
-
+                    //Animation vom Ball aufrufen mit Kollision Detektion
                     moveBall(background, x, y, ballDuration);
-                    //Snackbar.make(view, x + " " + y, Snackbar.LENGTH_SHORT).show();
                     break;
             }
             return true;
@@ -115,6 +103,7 @@ public class PenaltyShootout extends AppCompatActivity {
     public void moveGoalie(ImageView goalie, int newX, int newY) {
         TranslateAnimation goalieAnimation = new TranslateAnimation(0, newX - goalie.getX(), 0, newY - goalie.getY());
         goalieAnimation.setDuration(goalieDuration);
+
         //Nach der Bewegung in der neuen position bleiben
         goalieAnimation.setFillAfter(true);
         lastAnimationStarted = System.currentTimeMillis();
@@ -128,6 +117,7 @@ public class PenaltyShootout extends AppCompatActivity {
                 goalie.setX(newX);
                 goalie.setY(newY);
 
+                //Neue zufällige Position vom Torwart berechnen, wo er sich hinbewegen soll
                 newGoalieX = getRandomNumber(0, (((View) goalie.getParent()).getWidth() - goalie.getWidth()));
                 newGoalieY = getRandomNumber(0, (((View) goalie.getParent()).getHeight() - goalie.getHeight()));
 
@@ -145,7 +135,8 @@ public class PenaltyShootout extends AppCompatActivity {
         float ballcenterY = ball.getY() + (ball.getHeight() / 2);
 
         TranslateAnimation ballAnimation = new TranslateAnimation(0, newX - ballcenterX, 0, newY - ballcenterY);
-        //Duration je nach Schusskraft stärker oder schwächer
+
+
         ballAnimation.setDuration(duration);
         ballAnimation.setFillAfter(true);
         ball.setAnimation(ballAnimation);
@@ -156,22 +147,27 @@ public class PenaltyShootout extends AppCompatActivity {
                 ball.clearAnimation();
                 ImageView goalie = ((View) background.getParent()).findViewById(R.id.quadrat);
 
+                //Fortschritt der Animation berechnen (um zu wissen, wo der Goalie ist)
                 long currentTime = System.currentTimeMillis();
-
                 long timeSinceStart = currentTime - lastAnimationStarted;
                 double animationProgress = (1.0 / goalieDuration) * timeSinceStart;
+
+                //Position im animationProgress Zeitpunkt berechnen
                 double currentX = goalie.getX() + (((newGoalieX - goalie.getX()) * animationProgress));
                 double currentY = goalie.getY() + (((newGoalieY - goalie.getY()) * animationProgress));
 
-
+                //Goalie und Ball als Rect erstellen, um mit intersects zu arbeiten
                 Rect goalieRect = new Rect((int) Math.round(currentX), (int) Math.round(currentY), (int) Math.round(currentX + goalie.getWidth()), (int) Math.round(currentY + goalie.getHeight()));
                 Rect ballRect = new Rect((int) Math.round(newX - (ball.getWidth() / 2)), (int) Math.round(newY - (ball.getHeight() / 2)), (int) Math.round(newX + ball.getWidth() / 2), (int) Math.round(newY + ball.getHeight() / 2));
 
 
                 if (duration != 0) {
+                    //wenn der Torwart den Ball pariert
                     if (Rect.intersects(ballRect, goalieRect)) {
                         Snackbar.make(background, "No goal!", Snackbar.LENGTH_SHORT).show();
-                    } else if(ballInGoal(ballRect)){
+                    }
+                    //Wenn der Ball den Torspiegel trifft und nicht pariert wird
+                    else if(ballInGoal(ballRect)){
                         Snackbar.make(background, "Goal!", Snackbar.LENGTH_SHORT).show();
                         // Aufruf der Methode, um einen Coin hinzuzufügen
                         addCoinToTextFile();
@@ -179,10 +175,12 @@ public class PenaltyShootout extends AppCompatActivity {
                         // Aufruf der Methode, um die Anzeige zu aktualisieren
                         updateCoinsDisplay();
                     }
+                    //Wenn der Ball den Torspiegel verfehlt
                     else{
                         Snackbar.make(background, "Missed!", Snackbar.LENGTH_SHORT).show();
                     }
                 }
+                //Ball wieder in die Startposition setzen
                 ball.setX((background.getWidth() / 2) - ball.getWidth() / 2);
                 ball.setY(background.getHeight() - ball.getHeight());
 
@@ -203,18 +201,20 @@ public class PenaltyShootout extends AppCompatActivity {
         View background = findViewById(R.id.background);
         int backgroundWidth = background.getWidth();
         int backgroundHeigth = background.getHeight();
-        int goalWidth = (backgroundHeigth*2);
-        int goalX = (backgroundWidth-goalWidth)/2;
+        int goalWidth = (backgroundHeigth * 2);
+        int goalX = (backgroundWidth - goalWidth) / 2;
+
+        //Prozentuelle abständer der Torpfosten (im Verhältnis zum Bildschirm)
         final float WIDTH_POST_PERCENTAGE = (float) 0.0231;
         final float HEIGTH_POST_PERCENTAGE = (float) 0.0476;
 
-        if(ball.left > goalX +(goalWidth*WIDTH_POST_PERCENTAGE) && ball.right < (goalX+goalWidth)-(goalWidth*WIDTH_POST_PERCENTAGE)){
-
+        //Kontrolle, ob der Ball den Torspiegel trifft oder nicht
+        if (ball.left > goalX + (goalWidth * WIDTH_POST_PERCENTAGE) && ball.right < (goalX + goalWidth) - (goalWidth * WIDTH_POST_PERCENTAGE)) {
             return true;
         }
-
         return false;
     }
+
     private void updateCoinsDisplay() {
         int coinsCount = readCoinsFromTextFile();
         coinsTextView.setText("Coins: " + coinsCount);
