@@ -33,11 +33,10 @@ public class PenaltyShootout extends AppCompatActivity {
 
 
     private long lastAnimationStarted;
-    private int newGoalieX, newGoalieY;
-
-    private int goalieDuration = 2000;
+    private int newGoalieX;
+    private int newGoalieY;
+    private int goalieDuration = 500;
     private int ballDuration = 1000;
-
     private TextView coinsTextView;
 
     @Override
@@ -104,7 +103,7 @@ public class PenaltyShootout extends AppCompatActivity {
                 case MotionEvent.ACTION_UP:
                     //Snackbar.make(view, ((View)view.getParent()).findViewById(R.id.ball), Snackbar.LENGTH_SHORT);
 
-                    moveBall(background, x, y, 1000);
+                    moveBall(background, x, y, ballDuration);
                     //Snackbar.make(view, x + " " + y, Snackbar.LENGTH_SHORT).show();
                     break;
             }
