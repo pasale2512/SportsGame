@@ -11,7 +11,6 @@ import android.widget.ScrollView;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -169,12 +168,13 @@ public class Store extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
+    //Coins anzeigen
     private void updateCoinsDisplay() {
         coinsCount = readCoinsFromTextFile();
         coinsTextView.setText("Coins: " + coinsCount);
     }
 
+    //Coins lesen
     private int readCoinsFromTextFile() {
         try {
             File file = new File(getFilesDir(), "coins.txt");
@@ -199,6 +199,7 @@ public class Store extends AppCompatActivity {
         }
     }
 
+    //Coins speichern
     private void saveCoinsToTextFile(int coinsCount) {
         try {
             File file = new File(getFilesDir(), "coins.txt");
