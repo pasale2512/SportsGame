@@ -49,13 +49,14 @@ public class Settings extends AppCompatActivity {
             }
         });
     }
+    //Coin txt löschen
     private void deleteCoinsFile(String fileName) {
         File file = new File(getFilesDir(), fileName);
         if (file.exists()) {
             file.delete();
         }
     }
-
+    //gekaufte Elemente txt löschen
     private void deletePurchasedImagesFile(String fileName) {
         File file = new File(getFilesDir(), fileName);
         if (file.exists()) {
@@ -63,6 +64,7 @@ public class Settings extends AppCompatActivity {
         }
     }
 
+    //coins hinzufügen
     private void addCoinsToFile(int coinsCount) {
         try {
             File file = new File(getFilesDir(), "coins.txt");
