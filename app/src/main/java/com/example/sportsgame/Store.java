@@ -71,16 +71,6 @@ public class Store extends AppCompatActivity {
                 public void onClick(View v) {
                     int imageId = (int) v.getTag();
                     ImageView clickedImageView = (ImageView) v;
-
-                    if (purchasedImages1.contains(imageId)) {
-                        if (clickedImageView.isSelected()) {
-                            clickedImageView.setImageResource(R.drawable.gekauft);
-                            clickedImageView.setSelected(false);
-                        } else {
-                            clickedImageView.setImageResource(R.drawable.selected);
-                            clickedImageView.setSelected(true);
-                        }
-                    } else {
                         int imageCoin = imageCoins.get(imageId - 1);
                         if (imageCoin <= coinsCount) {
                             clickedImageView.setImageResource(R.drawable.gekauft);
@@ -94,7 +84,6 @@ public class Store extends AppCompatActivity {
                             Toast.makeText(Store.this, "Nicht genügend Münzen", Toast.LENGTH_SHORT).show();
                         }
                     }
-                }
             });
             if (purchasedImages1.contains(i)) { // Prüfe, ob das Bild bereits gekauft wurde
                 imageView.setImageResource(R.drawable.gekauft);

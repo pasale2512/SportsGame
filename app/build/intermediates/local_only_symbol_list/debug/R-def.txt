@@ -55,6 +55,10 @@ drawable image7
 drawable image8
 drawable image9
 drawable imbesitz
+drawable main
+drawable main2
+drawable main3
+drawable main4
 drawable selected
 drawable shop_white_player
 drawable shopitem
@@ -73,10 +77,9 @@ id coins2
 id coinsTextView
 id deleteCoinsButton
 id deletePurchasedImagesButton
+id imageView
 id quadrat
-id textView
 id textView2
-id textView3
 id textView4
 id textView5
 layout activity_main

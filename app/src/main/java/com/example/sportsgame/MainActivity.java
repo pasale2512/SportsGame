@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView coinsTextView; // TextView zur Anzeige der Münzen
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         // TextView für Münzen initialisieren
         coinsTextView = findViewById(R.id.coins);
         updateCoinsDisplay(); // Münzenanzeige aktualisieren
+
+
 
         //Start game
         Button buttonPlay = findViewById(R.id.button);
